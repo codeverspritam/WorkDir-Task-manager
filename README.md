@@ -1,1 +1,3 @@
 # WorkDir-Task-manager
+
+I have successfully built a dynamic **Task Management System** using a clean combination of **HTML, CSS, and JavaScript**. The application relies on **HTML** to establish a semantic web structure, featuring intuitive input fields, action buttons, and organized container panels for tracking items. **CSS** delivers a responsive layout with modern typography, subtle hover transitions, and visual indicators to clearly separate active tasks from completed ones. Finally, **JavaScript** serves as the core functional driver, executing Event Listeners to catch user input, manipulate the Document Object Model (DOM) to seamlessly inject or delete elements, and toggle priority statuses on the fly. 
