@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>DOM Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mode-toggle-element bg-gray-50 min-h-screen transition-colors duration-300">
+
+
+    <header class="mode-toggle-element bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center shadow-sm">
+        <h1 class="mode-toggle-element text-xl font-semibold text-gray-800">
+            ✅ DOM Task Manager
+        </h1>
+        <button id="ctrl-mode-switch"
+            class="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 transition">
+            🌙 <span id="lbl-mode-status">Dark Mode</span>
+        </button>
+    </header>
+
+    <main class="mode-toggle-element flex justify-center px-4 py-10">
+        <div class="mode-toggle-element w-full max-w-2xl">
+            <div class="grid grid-cols-3 gap-4 mb-6">
+                <div class="mode-toggle-element bg-white rounded-xl border border-gray-200 p-4 text-center shadow-sm">
+                    <div id="metric-all-items" class="text-3xl font-semibold text-red-800">0</div>
+                    <div class="mode-toggle-element text-sm text-gray-500 mt-1">Total Tasks</div>
+                </div>
+                <div class="mode-toggle-element bg-white rounded-xl border border-gray-200 p-4 text-center shadow-sm">
+                    <div id="metric-finished-items" class="text-3xl font-semibold text-green-600">0</div>
+                    <div class="mode-toggle-element text-sm text-gray-500 mt-1">Completed</div>
+                </div>
+                <div class="mode-toggle-element bg-white rounded-xl border border-gray-200 p-4 text-center shadow-sm">
+                    <div id="metric-waiting-items" class="text-3xl font-semibold text-yellow-500">0</div>
+                    <div class="mode-toggle-element text-sm text-gray-500 mt-1">Pending</div>
+                </div>
+            </div>
+
+
+            <div class="mode-toggle-element bg-white rounded-xl border border-gray-200 p-5 mb-4 shadow-sm">
+                <p class="mode-toggle-element gap-2 flex text-sm font-medium text-gray-500 mb-3"><img src="image/plus.png" alt=""> Add New Task</p>
+                <div class="flex gap-3 mode-toggle-element">
+
+                    <input type="text" id="fld-entry-title" placeholder="Task title..." value=""
+                        class="mode-toggle-element flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+                    <select id="fld-entry-type"
+                        class="mode-toggle-element border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="health">Health</option>
+                        <option value="other">Other</option>
+                    </select>
+
+
+                    <button
+                        class="btn-create-entry bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="mode-toggle-element flex gap-3 mb-4">
+                <input type="text" id="fld-query-string" placeholder="🔍 Search tasks..."
+                    class="mode-toggle-element flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <select id="fld-query-type"
+                    class="mode-toggle-element border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <option value="all">All Categories</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="health">Health</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="mode-toggle-element flex justify-between items-center mb-2 px-1">
+                <span class="text-sm font-medium text-gray-500">Tasks</span>
+                <button class="btn-wipe-data text-xs text-red-400 hover:text-red-600 transition">
+                    🗑 Clear All
+                </button>
+            </div>
+
+            <div id="container-entries" class="space-y-3">
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
