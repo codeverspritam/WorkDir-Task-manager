@@ -1,0 +1,216 @@
+.night-mode-active {
+  background-color: #1a202c;
+  color: #f7fafc;
+}
+/* ===========================
+   Royal Glass Theme (Light + Dark)
+   Visual-only changes
+   =========================== */
+
+:root {
+  --bg-main: #f7f9ff;
+
+  --text: #0b1220;
+  --muted: rgba(11, 18, 32, 0.62);
+
+  --royal-1: #4f46e5; /* indigo */
+  --royal-2: #6d28d9; /* purple */
+  --royal-3: #0ea5e9; /* sky */
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-2: rgba(255, 255, 255, 0.33);
+  --glass-border: rgba(79, 70, 229, 0.22);
+  --glass-border-2: rgba(14, 165, 233, 0.18);
+  --glass-shadow: 0 18px 60px rgba(79, 70, 229, 0.14);
+
+  --ring: rgba(79, 70, 229, 0.3);
+
+  /* typography */
+  --font-ui:
+    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  --radius: 16px;
+}
+
+html[data-theme="dark"] {
+  --bg-main: #070913;
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+
+  --glass-bg: rgba(11, 18, 32, 0.4);
+  --glass-bg-2: rgba(11, 18, 32, 0.24);
+  --glass-border: rgba(109, 40, 217, 0.28);
+  --glass-border-2: rgba(14, 165, 233, 0.16);
+  --glass-shadow: 0 26px 90px rgba(109, 40, 217, 0.28);
+
+  --ring: rgba(109, 40, 217, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-ui);
+}
+
+/* Background */
+body {
+  margin: 0;
+  color: var(--text);
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      1100px 560px at 18% 0%,
+      rgba(79, 70, 229, 0.35),
+      transparent 58%
+    ),
+    radial-gradient(
+      980px 520px at 90% 12%,
+      rgba(14, 165, 233, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 40% 95%,
+      rgba(109, 40, 217, 0.2),
+      transparent 60%
+    ),
+    var(--bg-main);
+
+  transition:
+    background 240ms ease,
+    color 240ms ease;
+}
+
+/* Blur helper */
+.mode-toggle-element {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Typography scale (alignment + better readability) */
+h1 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+main {
+  font-size: 0.95rem;
+}
+p {
+  letter-spacing: -0.01em;
+}
+input,
+select,
+button {
+  font-size: 0.92rem;
+}
+
+/* Header */
+header.mode-toggle-element {
+  background: linear-gradient(
+    135deg,
+    var(--glass-bg),
+    var(--glass-bg-2)
+  ) !important;
+  border: 1px solid var(--glass-border-2) !important;
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow) !important;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  /* alignment polish */
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Glass panels (only elements that already have bg-white class) */
+.mode-toggle-element.bg-white {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+/* Inputs / selects */
+input[type="text"],
+input[type="search"],
+select {
+  background: rgba(255, 255, 255, 0.62) !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+  color: var(--text) !important;
+  border-radius: 12px !important;
+
+  padding-top: 0.55rem !important;
+  padding-bottom: 0.55rem !important;
+}
+
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="search"],
+html[data-theme="dark"] select {
+  background: rgba(11, 18, 32, 0.3) !important;
+  border-color: rgba(109, 40, 217, 0.3) !important;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(79, 70, 229, 0.65) !important;
+  box-shadow: 0 0 0 4px var(--ring) !important;
+}
+
+/* Buttons */
+.btn-create-entry {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(
+    135deg,
+    var(--royal-1),
+    var(--royal-2)
+  ) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 18px 38px rgba(79, 70, 229, 0.28);
+  padding-top: 0.55rem !important;
+  padding-bottom: 0.55rem !important;
+}
+
+.btn-create-entry:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 55px rgba(109, 40, 217, 0.4);
+}
+
+/* Clear all button */
+.btn-wipe-data {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  border-radius: 12px;
+  padding: 7px 12px;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.btn-wipe-data:hover {
+  transform: translateY(-1px);
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+/* Metrics pop */
+#metric-all-items,
+#metric-finished-items,
+#metric-waiting-items {
+  text-shadow: 0 18px 40px rgba(79, 70, 229, 0.2);
+}
+
+/* Subtle smoothness */
+* {
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
